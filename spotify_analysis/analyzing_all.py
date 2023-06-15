@@ -140,3 +140,55 @@ print(uncorrelated_features)
 # Danceability score comparison between genres
 genres = ['Pop', 'Hip-Hop/Rap', 'Dance/Electronic', 'Alternative/Indie']
 danceability_scores = data[data['Genre'].
+
+# Danceability score comparison between genres
+genres = ['Pop', 'Hip-Hop/Rap', 'Dance/Electronic', 'Alternative/Indie']
+danceability_scores = data[data['Genre'].isin(genres)]['Danceability']
+
+# Plotting the danceability scores
+plt.figure(figsize=(8, 6))
+plt.boxplot(danceability_scores, labels=genres)
+plt.title('Danceability Score Comparison between Genres')
+plt.ylabel('Danceability Score')
+plt.xlabel('Genre')
+plt.show()
+
+# Loudness score comparison between genres
+loudness_scores = data[data['Genre'].isin(genres)]['Loudness (dB)']
+
+# Plotting the loudness scores
+plt.figure(figsize=(8, 6))
+plt.boxplot(loudness_scores, labels=genres)
+plt.title('Loudness Score Comparison between Genres')
+plt.ylabel('Loudness (dB)')
+plt.xlabel('Genre')
+plt.show()
+
+# Acousticness score comparison between genres
+acousticness_scores = data[data['Genre'].isin(genres)]['Acousticness']
+
+# Plotting the acousticness scores
+plt.figure(figsize=(8, 6))
+plt.boxplot(acousticness_scores, labels=genres)
+plt.title('Acousticness Score Comparison between Genres')
+plt.ylabel('Acousticness Score')
+plt.xlabel('Genre')
+plt.show()
+
+# Explanations and analysis improvement suggestions
+print("Explanations:")
+print("Danceability Score Comparison:")
+print("The boxplots show the distribution of danceability scores for each genre, allowing visual comparison of the median, quartiles, and potential outliers.")
+
+print("\nLoudness Score Comparison:")
+print("The boxplots display the distribution of loudness scores for each genre, facilitating a visual comparison of the median, quartiles, and potential outliers.")
+
+print("\nAcousticness Score Comparison:")
+print("The boxplots illustrate the distribution of acousticness scores for each genre, enabling a visual comparison of the median, quartiles, and potential outliers.")
+
+print("\nAnalysis Improvement Suggestions:")
+print("1. Perform statistical tests such as ANOVA or Kruskal-Wallis to determine if there are significant differences in scores between the genres.")
+print("2. Include histograms or density plots to provide a more detailed understanding of the score distributions within each genre.")
+print("3. Analyze other features such as energy, tempo, or valence to gain insights into their variations across different genres.")
+print("4. Expand the analysis to include more genres and explore their comparisons in terms of various features.")
+print("5. Investigate how different features correlate with each other across genres, for example, the relationship between danceability and energy within each genre.")
