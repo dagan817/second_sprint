@@ -18,7 +18,7 @@ data = data.loc[:, ~data.columns.duplicated()]
 # Treating outliers
 # Assuming outliers are present in numeric columns 'Danceability', 'Loudness (dB)', and 'Duration (ms)'
 # We can treat outliers using various methods like Winsorization, z-score, or manual capping.
-# For simplicity, let's consider manual capping for this example.
+# For simplicity, I am using manual capping for this example.
 
 # Capping outliers for 'Danceability'
 danceability_upper_limit = data['Danceability'].quantile(0.95)
